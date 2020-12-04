@@ -154,32 +154,46 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.only(top: 10, left: 2, right: 5),
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
-                          color: Colors.pink,
-                        ),
-                        child: Text(
-                          '*',
-                          style: TextStyle(fontSize: 50),
-                          textAlign: TextAlign.center,
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            Operators.operator = "*";
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(top: 10, left: 2, right: 5),
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(70),
+                            color: Colors.pink,
+                          ),
+                          child: Text(
+                            '*',
+                            style: TextStyle(fontSize: 50),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.only(top: 10, left: 2, right: 5),
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(70),
-                          color: Colors.pink,
-                        ),
-                        child: Text(
-                          '/',
-                          style: TextStyle(fontSize: 50),
-                          textAlign: TextAlign.center,
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            Operators.operator = "/";
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(top: 10, left: 2, right: 5),
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(70),
+                            color: Colors.pink,
+                          ),
+                          child: Text(
+                            '/',
+                            style: TextStyle(fontSize: 50),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     ],
@@ -193,6 +207,10 @@ class _HomePageState extends State<HomePage> {
                         Operators.result = Operators.num1 + Operators.num2;
                       } else if (Operators.operator == '-') {
                         Operators.result = Operators.num1 - Operators.num2;
+                      } else if (Operators.operator == '*') {
+                        Operators.result = Operators.num1 * Operators.num2;
+                      } else if (Operators.operator == '/') {
+                        Operators.result = Operators.num1 / Operators.num2;
                       }
                       setState(() {
                         print('x');
